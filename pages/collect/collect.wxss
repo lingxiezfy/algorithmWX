@@ -1,0 +1,19 @@
+/* pages/collect/collect.wxss */
+.row-warp{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.rank-image{
+  width: 20px; height: 20px;
+  align-self: center;
+}
+.border-top-1{
+  border-top: 1rpx #d81e06 solid;
+}
+.page{
+}
+.collect-item{
+  border-bottom: solid grey 1px;
+  padding: 10px 15px;
+}

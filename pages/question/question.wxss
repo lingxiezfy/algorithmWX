@@ -1,0 +1,51 @@
+/* pages/question/question.wxss */
+@import "../../weui.wxss";
+
+.page__hd {
+    padding: 20px 25px 10px 25px;
+    border-bottom: solid 1px #d81e06;
+}
+
+.page__bd {
+    padding-bottom: 15px;
+}
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.code{
+  font-size: 13px;
+  margin-top: 20px;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  background-color: black;
+}
+.page__ft{
+    padding-bottom: 10px;
+    text-align: center;
+}
+.question-title{
+  font-weight: bold;
+}
+.sub-title{
+  font-weight: bold;
+}
+.question-desc{
+  font-size: 15px;
+}
+.question-section{
+  margin-bottom: 15px;
+  padding-left: 5px;
+}
+.code-btn{
+  margin-top: 10px;
+}
+/*收藏按钮*/
+.share-img {
+  border: 0px;
+  height: 48px;
+  width: 48px;
+  right: 10px;
+  top: 40px;
+  position: fixed;
+}

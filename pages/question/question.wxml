@@ -1,0 +1,51 @@
+<!--pages/question/question.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title question-title">{{question[0].q_title}}</view>
+    <view class="page__desc question-desc">时间限制:{{question[0].q_time_limit}} ms</view>
+    <view class="page__desc question-desc">内存限制:{{question[0].q_space_limit}} KB</view>
+    <view class="page__desc question-desc">{{question[0].type.source.s_name}}-{{question[0].type.t_name}}</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__section question-section">
+        <view class="weui-article__title sub-title">问题描述</view>
+        <view class="weui-article__section">
+          <view class="weui-article__p">
+            {{question[0].q_description}}
+          </view>
+        </view>
+      </view>
+      <view class="weui-article__section question-section">
+        <view class="weui-article__title sub-title">输入</view>
+        <view class="weui-article__section">
+          <view class="weui-article__p">
+            {{question[0].q_input}}
+          </view>
+        </view>
+      </view>
+      <view class="weui-article__section question-section">
+        <view class="weui-article__title sub-title">输出</view>
+        <view class="weui-article__section">
+          <view class="weui-article__p">
+            {{question[0].q_output}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+  <view class="button-sp-area code-btn" >
+    <button class="weui-btn" type="default" plain="true" bindtap='getCode'>代码查看</button>
+
+  </view>
+
+  <view class='code' wx:if="{{hascode}}">
+  <text>{{code[0].c_code_content}}</text>
+  </view>
+  <button bindtap='onCollected'>
+    <image class='share-img' wx:if="{{!isCollect}}" src='../../image/collect.png'></image>
+    <image class='share-img' wx:else src='../../image/collect-collected.png'></image>
+  </button>
+</view>

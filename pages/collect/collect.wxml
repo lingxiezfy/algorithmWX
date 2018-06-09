@@ -1,0 +1,45 @@
+<!--pages/collect/collect.wxml-->
+<view class='page'>
+  <view class="weui-cells weui-cells_after-title border-top-1">
+    <block wx:if="{{questionList.length > 0}}">
+      <view class="weui-cell collect-item" wx:for="{{questionList}}">
+        <view class="weui-cell__bd" id='{{item.q_id}}' bindtap='viewQuestion'>
+          <view>{{item.q_title}}</view>
+          <view class="row-warp">
+            <view style="width:350rpx;flex-grow:1;">
+              <view style="font-size: 10px;color: #888888;">
+                标签:
+                <block wx:for="{{item.tags}}" wx:for-item="tag" wx:for-index="idx">
+                  {{tag.tag_name}}
+                  <block wx:if="{{idx<item.tags.length-1}}">/</block>
+                </block>
+              </view>
+              <view style="font-size: 10px;color: #888888;">
+                来源-类型:{{item.type.source.s_name}}-{{item.type.t_name}}
+              </view>
+            </view>
+            <view style="width:230rpx; font-size: 16px;color: #888888;">
+              难度:
+              <block wx:for="{{[1,2,3]}}" wx:for-item="i">
+                <image class='rank-image' wx:if="{{item.rank.r_id >= i}}" mode="aspectFit" src="../../image/rank-up.png"> </image>
+                <image class='rank-image' wx:else mode="aspectFit" src="../../image/rank.png"> </image>
+              </block>
+
+            </view>
+          </view>
+
+
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="container">
+        <view class="userinfo">
+          <block>
+            <text class="userinfo-nickname">暂无数据</text>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
