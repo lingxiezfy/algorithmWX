@@ -31,7 +31,7 @@ Page({
       s_id: e.currentTarget.id
     })
     wx.request({
-      url: "http://192.168.43.33:8080/algorithm/question_list_action?curr_page=" + this.data.curr_page + "&page_size=" + this.data.page_size + "&s_id=" + this.data.s_id + "&search_value=" + this.data.search_value,
+      url: "https://fyspace.cn/algorithmWeb/question_list_action?curr_page=" + this.data.curr_page + "&page_size=" + this.data.page_size + "&s_id=" + this.data.s_id + "&search_value=" + this.data.search_value,
       success: (res) => {
         this.setData({ questionList: res.data });
       },
@@ -86,7 +86,7 @@ Page({
   },
   getQuestionData:function(){
     wx.request({
-      url: "http://192.168.43.33:8080/algorithm/question_list_action?curr_page=1"+ "&page_size=" + this.data.page_size + "&s_id=" + this.data.s_id + "&search_value=" + this.data.search_value,
+      url: "https://fyspace.cn/algorithmWeb/question_list_action?curr_page=1"+ "&page_size=" + this.data.page_size + "&s_id=" + this.data.s_id + "&search_value=" + this.data.search_value,
       success: (res) => {
         this.setData({ questionList: res.data });
       },
@@ -102,7 +102,7 @@ Page({
   getSourceData:function(){
     var initData = this.data.sourceList;
     wx.request({
-      url: 'http://192.168.43.33:8080/algorithm/source_list_action',
+      url: 'https://fyspace.cn/algorithmWeb/source_list_action',
       success: (res) => {
         initData = initData.concat(res.data);
         console.log(initData);
@@ -156,7 +156,7 @@ Page({
       var nextPage = currPage + 1;
       console.log(nextPage);
       wx.request({
-        url: "http://192.168.43.33:8080/algorithm/question_list_action?curr_page=" + nextPage + "&page_size=" + this.data.page_size + "&s_id=" + this.data.s_id + "&search_value=" + this.data.search_value,
+        url: "https://fyspace.cn/algorithmWeb/question_list_action?curr_page=" + nextPage + "&page_size=" + this.data.page_size + "&s_id=" + this.data.s_id + "&search_value=" + this.data.search_value,
         success: (res) => {
           newData = res.data;
         },

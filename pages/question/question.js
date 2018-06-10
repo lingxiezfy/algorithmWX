@@ -17,7 +17,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: "http://192.168.43.33:8080/algorithm/question_action?q_id=" + options.q_id,
+      url: "https://fyspace.cn/algorithmWeb/question_action?q_id=" + options.q_id,
       success: (res) => {
         that.setData({ question: res.data });
         //获取是否收藏
@@ -89,7 +89,7 @@ Page({
     });
     var that = this;
     wx.request({
-      url: "http://192.168.43.33:8080/algorithm/code_action?q_id=" + that.data.question[0].q_id,
+      url: "https://fyspace.cn/algorithmWeb/code_action?q_id=" + that.data.question[0].q_id,
 
       success: (res) => {
         if (res.data[0] != null && res.data[0].c_code_content != ""){

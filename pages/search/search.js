@@ -11,7 +11,7 @@ Page({
   onLoad: function () {
     var that = this;
     wx.request({
-      url: "http://192.168.43.33:8080/algorithm/tag_list_action",
+      url: "https://fyspace.cn/algorithmWeb/tag_list_action",
       success: (res) => {
         that.setData({ tags: res.data });
       },
